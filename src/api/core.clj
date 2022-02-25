@@ -9,7 +9,8 @@
             [clojure.data.json :as json]
             [clojure.tools.logging :as log]
             [api.handlers :refer :all]
-            [api.tweets.database :as d])
+            [api.tweets.database :as d]
+            )
   (:gen-class))
 
 (defroutes app-routes
@@ -24,4 +25,5 @@
   [& args]
   (let [port 3000]
     (server/run-server (wrap-defaults #'app-routes api-defaults)  {:port port})
-    (println (str "API is Running on post " port " 🔥!"))))
+    (println (str "API is Running on post " port " 🔥!")
+)))
